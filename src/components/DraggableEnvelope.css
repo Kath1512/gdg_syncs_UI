@@ -1,0 +1,65 @@
+/* ================================
+   Draggable Envelope + Gossip Paper
+   ================================ */
+
+.envelope-group {
+  position: absolute;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+/* Envelope card */
+.draggable-envelope {
+  cursor: grab;
+  user-select: none;
+  filter: drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.15));
+  transition: transform 0.15s ease;
+}
+
+.draggable-envelope:active {
+  cursor: grabbing;
+}
+
+.draggable-envelope:hover {
+  transform: scale(1.08);
+}
+
+/* Smaller envelope image */
+.envelope-img {
+  width: 110px;
+  display: block;
+}
+
+/* Gossip note revealed on click */
+.gossip-paper {
+  background-color: #fffde7;
+  border: 1px solid #e0d7a0;
+  border-radius: 4px;
+  padding: 0.8rem 1rem;
+  max-width: 180px;
+  font-family: var(--font-cursive);
+  font-size: 0.95rem;
+  color: #333;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.12);
+  cursor: grab;
+  user-select: none;
+
+  /* Slide-in animation */
+  animation: paper-appear 0.25s ease;
+}
+
+.gossip-paper:active {
+  cursor: grabbing;
+}
+
+@keyframes paper-appear {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

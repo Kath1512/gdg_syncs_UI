@@ -1,0 +1,42 @@
+/* ================================
+   Googly Eyes — fixed on screen, track cursor
+   ================================ */
+
+/* Fixed so eyes stay visible while the rest of page 3 scrolls */
+.googly-eyes {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 1.5rem;
+  z-index: 50;
+  pointer-events: none; /* eyes don't block dragging envelopes */
+}
+
+/* White circle = eyeball */
+.googly-eye {
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 3px solid #222;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Dark dot = pupil — positioned off-center so rotation makes it "look" around */
+.googly-pupil {
+  width: 30px;
+  height: 30px;
+  background-color: #222;
+  border-radius: 50%;
+  position: absolute;
+  /* Offset upward so rotation swings the pupil around the eye center */
+  top: 8px;
+  left: 50%;
+  transform-origin: 50% calc(40px - 8px); /* distance from pupil top to eye center */
+  transform: translateX(-50%);
+}

@@ -1,0 +1,91 @@
+/* ================================
+   Page 2 + 3 — Main / Landing / Tea
+   ================================ */
+
+.main-page {
+  background-color: var(--color-cream);
+  min-height: 100vh;
+}
+
+/* ── Page 2: Landing ── */
+.landing-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  padding: 4rem 8vw;
+  flex-wrap: wrap;
+}
+
+.landing-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Large XOXO — PPRightGroteskMono, full opacity blue */
+.landing-xoxo {
+  font-family: var(--font-ppr);
+  font-size: clamp(5rem, 14vw, 10rem);
+  color: var(--color-blue);
+  opacity: 1;
+  line-height: 1;
+}
+
+/* "gossip girl" — same font, 20% opacity */
+.landing-gossip-girl {
+  font-family: var(--font-cursive);
+  font-size: clamp(2rem, 5vw, 4rem);
+  color: var(--color-blue);
+  opacity: 0.2;
+  line-height: 1;
+}
+
+/* Envelope button — triggers wiggle on hover */
+.landing-envelope-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.landing-envelope-img {
+  width: clamp(140px, 18vw, 240px);
+  transition: transform 0.1s ease;
+}
+
+/* Wiggle animation — plays on hover */
+.landing-envelope-btn:hover .landing-envelope-img {
+  animation: wiggle 0.5s ease;
+}
+
+@keyframes wiggle {
+  0%   { transform: rotate(0deg); }
+  20%  { transform: rotate(-8deg); }
+  40%  { transform: rotate(8deg); }
+  60%  { transform: rotate(-5deg); }
+  80%  { transform: rotate(5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* ── Page 3: Tea ── */
+.tea-section {
+  position: relative;
+  background-color: var(--color-cream);
+  padding-top: 4rem;
+}
+
+/* Container that holds all envelopes with absolute positioning */
+.tea-envelopes-container {
+  position: relative;
+  width: 100%;
+  /* Height just enough to contain the clustered envelopes */
+  height: 520px;
+}
+
+/* Marquee sits in normal flow after the envelopes, with a 0.5in gap above */
+.tea-section > .marquee-strip {
+  margin-top: 0.5in;
+  margin-bottom: 0.5in;
+}

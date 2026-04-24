@@ -1,0 +1,74 @@
+/* ================================
+   Phone Screen — Nokia image + screen overlay
+   ================================ */
+
+.phone-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 0;
+}
+
+/* Container is relative so the overlay can be positioned over the image */
+.phone-container {
+  position: relative;
+  display: inline-block;
+}
+
+.phone-image {
+  width: clamp(200px, 22vw, 320px);
+  display: block;
+}
+
+/* Overlay sits precisely over the white screen area of the Nokia image.
+   These percentages are tuned to the -5.jpg layout:
+   screen starts ~13% from top, ends ~52% from top, 14% from left, 14% from right */
+.phone-screen-overlay {
+  position: absolute;
+  top: 13%;
+  left: 14%;
+  right: 14%;
+  height: 39%;   /* screen height as % of total phone image height */
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* Blue grainy background — feTurbulence via CSS filter */
+.phone-screen-grain {
+  position: absolute;
+  inset: 0;
+  background-color: #1a4a8a;
+  filter: url(#screen-grain);
+  opacity: 0.9;
+}
+
+/* Hidden SVG filter */
+.phone-grain-filter {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/* Nokia-font typing text on top of the grain */
+.phone-typing-text {
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-texting);
+  font-size: clamp(0.5rem, 1.2vw, 0.85rem);
+  color: #c8e6ff;
+  padding: 8% 8%;
+  white-space: pre-wrap;
+  word-break: break-word;
+  line-height: 1.6;
+}
+
+/* Blinking underscore cursor */
+.typing-cursor {
+  animation: blink 0.7s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}

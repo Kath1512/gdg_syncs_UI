@@ -1,0 +1,89 @@
+/* ================================
+   Page 1 — Spotlight
+   ================================ */
+
+/* Default spotlight position = center so content is visible before cursor enters */
+.spotlight-page {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--color-navy);
+  overflow: hidden;
+  cursor: default;
+
+  --spotlight-x: 50%;
+  --spotlight-y: 50%;
+}
+
+/* Dark overlay with a transparent "hole" that follows the cursor.
+   mix-blend-mode: multiply lets the navy background show through outside the hole */
+/* Outside the spotlight circle: semi-transparent navy so text is faintly visible */
+.spotlight-mask {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle 220px at var(--spotlight-x) var(--spotlight-y),
+    transparent 0%,
+    rgba(0, 7, 81, 0.88) 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Text block — vertically centered, left-of-center */
+.spotlight-content {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  z-index: 1;
+  color: var(--color-white);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.spotlight-line--sans {
+  font-family: var(--font-sans);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1.4;
+}
+
+/* Line that mixes cursive + sans inline (matches the design layout) */
+.spotlight-line--mixed {
+  font-family: var(--font-sans);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1.4;
+}
+
+/* "gossip girl here" portion — larger cursive, sits inline */
+.spotlight-cursive-inline {
+  font-family: var(--font-cursive);
+  font-size: clamp(2.4rem, 5.5vw, 4rem);
+  vertical-align: middle;
+}
+
+/* Envelope — bottom-right corner, overlapping the text block */
+.spotlight-envelope-btn {
+  position: absolute;
+  bottom: 12%;
+  right: 8%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1;
+  transition: transform 0.2s ease;
+}
+
+.spotlight-envelope-btn:hover {
+  transform: scale(1.08) rotate(-4deg);
+}
+
+.spotlight-envelope-img {
+  width: clamp(100px, 14vw, 180px);
+  display: block;
+  /* Slight tilt matching the design */
+  transform: rotate(-8deg);
+}

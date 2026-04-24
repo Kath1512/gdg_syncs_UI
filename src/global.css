@@ -1,0 +1,66 @@
+/* ================================
+   Custom Font Declarations
+   ================================ */
+
+/* Cursive script — XOXO, gossip text, marquee, spotlight heading */
+@font-face {
+  font-family: 'BibliophileScript';
+  src: url('/assets/BibliophileScript-Regular-D8DTnNEq.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 90s display font — navbar buttons */
+@font-face {
+  font-family: 'ZTBrosOskon90s';
+  src: url('/assets/ZTBrosOskon90s-Regular-CROKvpw6.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Mono grotesque — Page 2 body/navbar */
+@font-face {
+  font-family: 'PPRightGroteskMono';
+  src: url('/assets/PPRightGroteskMono-Fine-BidfrfbY.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Nokia phone font — Page 4 typing text */
+@font-face {
+  font-family: 'NokiaFC22';
+  src: url('/assets/nokiafc22.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ================================
+   Global Reset & CSS Variables
+   ================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-navy: #000751;
+  --color-cream: #FFFCF6;
+  --color-blue: #0015FF;
+  --color-nav-btn: #D9DCFF;
+  --color-white: #FFFFFF;
+
+  --font-cursive: 'BibliophileScript', cursive;
+  --font-sans: 'ZTBrosOskon90s', sans-serif;
+  --font-ppr: 'PPRightGroteskMono', monospace;   /* Page 2 */
+  --font-texting: 'NokiaFC22', monospace;         /* Page 4 phone screen */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}

@@ -1,0 +1,15 @@
+/* ================================
+   Page 4 — About
+   ================================ */
+
+.about-page {
+  background-color: var(--color-cream);
+  min-height: 100vh;
+}
+
+.about-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 70px); /* subtract navbar height */
+}
