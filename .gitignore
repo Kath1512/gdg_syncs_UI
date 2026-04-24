@@ -1,0 +1,10 @@
+# AI / Claude
+CLAUDE.md
+.claude/
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
